@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include<math.h>
+int main()
+{
+    int a,b;
+    float x,mass,p,h=6.625*pow(10,-34),pi=3.14;
+    printf("enter 1 or 2 \n");
+    printf("1-To verify whether the electron is present in the nucleus of the atom  \n");
+    printf("2-To calculate the position or momentum of the particle \n");
+    scanf("%d",&a);
+    if(a==1)
+    {
+      printf("Enter mass of the electron \n");
+      scanf("%f",&mass);
+      if(mass<=4.94*pow(10,-34))
+      {
+          printf("elctron exist inside the nucleus \n");
+      }
+      else
+      {
+          printf("elctron does not exist inside the nucleus \n");
+      }
+    }
+    else
+    {
+        printf("Enter 1 to calculate position or 2 to calculate momentum \n");
+        scanf("%d",&b);
+        if(b==1)
+        {
+            printf("Enter momentum of the body \n");
+            scanf("%f",&p);
+            x=h/(4*p*pi);
+            printf("The position of the particle is %f \n",x);
+            if(x<0.1)
+            {
+                printf("This shows that the probability of the position of the particle is very low \n");
+            }
+            else
+            {
+                 printf("This shows that the probability of the position of the particle is very high \n");
+            }
+        }
+        else
+        {
+            printf("Enter poition of the body \n");
+            scanf("%f",&x);
+            p=h/(4*x*pi);
+            printf("The momentum of the particle is %f \n",p);
+            if(p<0.1)
+            {
+                printf("This shows that the probability of the momentum of the particle is very low \n");
+            }
+            else
+            {
+                 printf("This shows that the probability of the momentum of the particle is very high \n");
+            }
+        }
+    }
+    return 0;
+}
+
